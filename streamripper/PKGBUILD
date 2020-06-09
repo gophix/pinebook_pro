@@ -1,0 +1,24 @@
+# Maintainer: gophix<gophix[?]posteo[?]de>
+
+pkgname=streamripper
+pkgver=1.64.6
+pkgrel=1
+pkgdesc="rip shoutcast radio streams to mp3 files"
+arch=('aarch64')
+url="https://sourceforge.net/projects/streamripper"
+license=('GPL2')
+depends=('libogg' 'libvorbis' 'glibc' 'glib2' 'libmad')
+source=("https://sourceforge.net/projects/streamripper/files/streamripper%20%28current%29/1.64.6/streamripper-1.64.6.tar.gz/download")
+md5sums=('a37a1a8b8f9228522196a122a1c2dd32')
+makedepends=('pkg-config')
+
+build() {
+    cd "$pkgname-${pkgver}"
+    ./configure --build=unknown-unknown-linux --prefix=/usr/local
+    make
+}
+
+package() {
+    cd "$pkgname-${pkgver}"
+    make prefix="$pkgdir/usr/" install
+}
