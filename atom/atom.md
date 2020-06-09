@@ -70,7 +70,7 @@ $ script/build
 
 Many lines in generating snapshot script (script/lib/generate-startup-snapshot.js) were commented out.
 
-### claean out
+### clean out
 
 one-liner:
 
