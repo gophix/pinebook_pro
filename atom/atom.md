@@ -7,7 +7,7 @@ Using [PlatformIO IDE](https://docs.platformio.org) needs [atom](https://atom.io
 needs (maybe something is missing):
 
 ```
-sudo pacman -Syu gcc make guile
+sudo pacman -Syu gcc make guile fakeroot binutils patch electron
 sudo pacman -Syu npm nodejs node-gyp semver
 ```
 
@@ -20,6 +20,11 @@ $ export LC_MESSAGES=POSIX
 $ cd path/to/atom
 $ makepkg                                               # ~70 min
 $ sudo pacman -U atom-1.46.0-1-aarch64.pkg.tar.xz       # install atom
+```
+
+uninstall atom:
+
+```
 $ sudo pacman -R atom                                   # remove atom
 ```
 
