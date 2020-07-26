@@ -7,7 +7,7 @@ Using [PlatformIO IDE](https://docs.platformio.org) needs [atom](https://atom.io
 needs (maybe something is missing):
 
 ```
-sudo pacman -Syu gcc make guile fakeroot binutils patch electron
+sudo pacman -Syu gcc make guile fakeroot binutils patch (electron)
 sudo pacman -Syu npm nodejs node-gyp semver
 ```
 
@@ -19,7 +19,7 @@ build and install with PKGBUILD script:
 $ export LC_MESSAGES=POSIX
 $ cd path/to/atom
 $ makepkg                                               # ~70 min
-$ sudo pacman -U atom-1.46.0-1-aarch64.pkg.tar.xz       # install atom
+$ sudo pacman -U atom-1.47.0-1-aarch64.pkg.tar.xz       # install atom
 ```
 
 uninstall atom:
@@ -36,18 +36,18 @@ bootstrap:
 
 ```
 $ export LC_MESSAGES=POSIX
-$ git clone https://github.com/atom/atom.git --branch=v1.46.0
+$ git clone https://github.com/atom/atom.git --branch=v1.47.0
 $ nano atom/script/package.json
 ----
-    "electron-link": "0.4.2",  # "0.4.0",
+    "electron-link": "0.4.2",  # "0.4.1",
     ...
-    "fs-admin": "^0.13.0",     # "^0.5.0",
+    "fs-admin": "^0.13.0",     # "^0.12.0",
     ...
     "minidump": "0.19.0",      # "0.9.0",
 ----
 $nano atom/apm/package.json
 ----
-    "atom-package-manager": "2.5.0"    # "2.4.3"
+    "atom-package-manager": "2.5.0"    # "2.4.5"
 ----
 $nano atom/package.json
 ----
@@ -102,8 +102,8 @@ sudo rm -rf /root/.npm
 ## build log:
 
 ```
-$ makepkg
-==> Making package: atom 1.46.0-1 (Di 09 Jun 2020 13:41:31 CEST)
+$ time makepkg
+==> Making package: atom 1.47.0-1 (So 26 Jul 2020 14:56:40 CEST)
 ==> Checking runtime dependencies...
 ==> Checking buildtime dependencies...
 ==> Retrieving sources...
@@ -120,47 +120,46 @@ Fetching origin
 Cloning into 'atom'...
 done.
 ==> Starting prepare()...
-npm binpath: /usr/bin/npm verison: 6.14.5
-node version: v14.3.0
-node-gyp version: v6.1.0
-git version: git version 2.26.2
-installed electron version (ELECTRON_VERSION): v8.2.5
-Note: switching to 'tags/v1.46.0'.
+npm binpath: /usr/bin/npm verison: 6.14.6
+node version: v14.5.0
+node-gyp version: v7.0.0
+git version: git version 2.27.0
+installed electron version (ELECTRON_VERSION): v9.1.0
+Note: switching to 'tags/v1.47.0'.
 <..warnings..>
-HEAD is now at c1fea480e Bump github@0.34.1-3
+HEAD is now at eb1ec8622 apm install
 patching file apm/package.json
 patching file package.json
 patching file script/package.json
 patching file script/lib/generate-startup-snapshot.js
-Node:   v14.3.0
-Npm:    v6.14.5
+Node:   v14.5.0
+Npm:    v6.14.6
 Installing script dependencies
 <..warnings..>
 Installing apm
 <..warnings..>
 apm  2.5.0
-npm  6.14.5
+npm  6.14.7
 node 10.20.1 arm64
 atom unknown
 python 3.8.3
-git 2.26.2
+git 2.27.0
 Installing modules ✓
-Wrote Dependencies Fingerprint: /home/pinebook_pro/atom/src/atom/node_modules/.dependencies-fingerprint 80f5e0a7b12fff146d2a5da12338a52c0fd73841
+Wrote Dependencies Fingerprint: /home/pinebook_pro/atom/src/atom/node_modules/.dependencies-fingerprint 6a9eccf4e085d5385a266693de3234346a1703ac
 ==> Starting build()...
-delete node_modules then apply patch
 patching file node_modules/github/package.json
-Node:   v14.3.0
-Npm:    v6.14.5
+Node:   v14.5.0
+Npm:    v6.14.6
 Installing script dependencies
 Installing apm
 apm  2.5.0
-npm  6.14.5
+npm  6.14.7
 node 10.20.1 arm64
 atom unknown
 python 3.8.3
-git 2.26.2
+git 2.27.0
 Installing modules ✓
-Wrote Dependencies Fingerprint: /home/pinebook_pro/atom/src/atom/node_modules/.dependencies-fingerprint 80f5e0a7b12fff146d2a5da12338a52c0fd73841
+Wrote Dependencies Fingerprint: /home/pinebook_pro/atom/src/atom/node_modules/.dependencies-fingerprint 6a9eccf4e085d5385a266693de3234346a1703ac
 Copying assets to /home/pinebook_pro/atom/src/atom/out/app
 Transpiling packages with custom transpiler configurations in /home/pinebook_pro/atom/src/atom/out/app
  transpiling for package github
@@ -175,18 +174,18 @@ Generating metadata for /home/pinebook_pro/atom/src/atom/out/app/package.json
 Generating API docs at /home/pinebook_pro/atom/src/atom/docs/output/atom-api.json
 Dumping symbols in /home/pinebook_pro/atom/src/atom/out/symbols
 Running electron-packager on /home/pinebook_pro/atom/src/atom/out/app with app name "atom"
-Downloading tmp-57874-1-SHASUMS256.txt-4.2.7
-[============================================>] 100.0% of 4.74 kB (4.74 kB/s)
-Packaging app for platform linux arm64 using electron v4.2.7
-Changing permissions for node files in /home/pinebook_pro/atom/src/atom/out/atom-1.46.0-arm64
-Copying non-ASAR resources to /home/pinebook_pro/atom/src/atom/out/atom-1.46.0-arm64/resources
-Writing LICENSE.md to /home/pinebook_pro/atom/src/atom/out/atom-1.46.0-arm64/resources
-Application bundle created at /home/pinebook_pro/atom/src/atom/out/atom-1.46.0-arm64
-Generating snapshot script at "/home/pinebook_pro/atom/src/atom/out/startup.js" (4234)
+Downloading tmp-134040-1-SHASUMS256.txt-5.0.13
+[============================================>] 100.0% of 4.79 kB (4.79 kB/s)
+Packaging app for platform linux arm64 using electron v5.0.13
+Changing permissions for node files in /home/pinebook_pro/atom/src/atom/out/atom-1.47.0-arm64
+Copying non-ASAR resources to /home/pinebook_pro/atom/src/atom/out/atom-1.47.0-arm64/resources
+Writing LICENSE.md to /home/pinebook_pro/atom/src/atom/out/atom-1.47.0-arm64/resources
+Application bundle created at /home/pinebook_pro/atom/src/atom/out/atom-1.47.0-arm64
+
 Minifying startup script
 Skipping creating debian package. Specify the --create-debian-package option to create it.
 Skipping creating rpm package. Specify the --create-rpm-package option to create it.
-Skipping artifacts compression. Specify the --compress-artifacts option to compress Atom binaries (and symbols on macOS)
+Skipping artifacts compression. Specify the --compress-artifacts option to compress Atom binaries (and symbols on macOS)                                                                                                                  
 Skipping installation. Specify the --install option to install Atom
 ==> Entering fakeroot environment...
 ==> Starting package()...
@@ -434,5 +433,5 @@ usr/local/lib/atom/resources/app/apm/node_modules/first-mate/node_modules/fs-plu
   -> Generating .MTREE file...
   -> Compressing package...
 ==> Leaving fakeroot environment.
-==> Finished making: atom 1.46.0-1 (Di 09 Jun 2020 14:51:59 CEST)
+==> Finished making: atom 1.47.0-1 (So 26 Jul 2020 15:54:08 CEST)
 ```
