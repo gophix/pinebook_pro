@@ -1,7 +1,7 @@
 # Maintainer: gophix<gophix[?]posteo[?]de>
 
 pkgname=atom
-pkgver=1.47.0
+pkgver=1.48.0
 pkgrel=1
 pkgdesc="The hackable text editor"
 arch=('aarch64')
@@ -13,7 +13,7 @@ source=('git+https://github.com/atom/atom.git'
         'bootstrap.patch'
         'build.patch' )
 sha256sums=('SKIP'
-            'cb9f327d2b9684d49524ad284a3360111dbbad6088b6b0a20c9da55e0eb62765'
+            'a8267a1be5de3f41abcac0086e25136f9ebf4f44e3102f16c7b4ff281807ea0c'
             '8c8a8abe01b206b1edf2fa80a67b922c6305a09ef26233ec91fae61f706a1e67' )
 
 prepare() {
